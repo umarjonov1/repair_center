@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {% load static %}
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Site Metas -->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Services</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css'%}"/>
+
+    <!-- fonts style -->
+    <!--  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">-->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet"/>
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="{% url 'home'%}">
+            <span>
+              Service Center
+            </span>
+                </a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{% url 'home' %}">Главная страница <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'about' %}">О компании</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'service' %}">Услуги</a>
+                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a class="nav-link" href="{% url 'login' %}">Свяжитесь с нами</a>-->
+<!--                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'repairs:list' %}">Логин</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+</div>
+<br><br><br>
+<section class="service_section layout_padding-bottom">
+    <div class="container">
+        <div class="custom_heading-container">
+            <h3 class=" ">
+                Успешно работаем с запросами:
+            </h3>
+        </div>
+        <p class="simple">
+        <ul class="left">
+            <li>Телевизор не включается</li>
+            <li>Нет изображения на экране</li>
+            <li>Нет приема ТВ вещания</li>
+            <li>Нет звука или искаженный звук</li>
+            <li>Не работают кнопки или пульт ДУ</li>
+        </ul>
+        <br><br>
+        <ul class="center">
+            <li>Неисправен внутренний блок питания</li>
+            <li>Неисправен преобразователь (инвертор)</li>
+            <li>Неисправна основная плата ТВ</li>
+            <li>Неисправна подсветка ЖК панели ТВ</li>
+            <li>Неисправна плата обработки изображения</li>
+        </ul>
+        <ul class="right">
+            <li>Неисправно программное обеспечение</li>
+            <li>Не работает чтение с внешних носителей</li>
+            <li>Не работает модуль wi-fi, bluetooth</li>
+            <li>Разбит экран ЖК дисплея ТВ</li>
+            <li>ТВ подлежит утилизации</li>
+        </ul>
+        <div class="container">
+            <div class="btn-box">
+                <a href="{% url 'repairs:list' %}" class="btn btn-success">
+                    Оставить заявление
+                </a>
+                </a>
+            </div>
+        </div>
+        <div class="service_container ">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box b-1">
+                        <div class="img-box">
+                            <img
+                                    src="https://st.depositphotos.com/2680419/4325/v/450/depositphotos_43255187-stock-illustration-vector-laptop-tablet-monitor-and.jpg"
+                                    width="230" height="200" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт
+                                телевизора
+                                монитора
+                            </h6>
+                            <p>
+                                Вернем работоспособность вашего системного блока
+                                ноутбука
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-2">
+                        <div class="img-box">
+                            <img
+                                    src="https://media.istockphoto.com/photos/3d-set-of-home-appliances-on-white-background-picture-id993760082?k=20&m=993760082&s=170667a&w=0&h=1iGe1ZYl6FO0_FIXzPyRmmlqk41rzeEmLEhziRg2Nq4="
+                                    width="230" height="200" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт
+                                бытовой техники
+                                и техники для дома
+                            </h6>
+                            <p>
+                                Кухонная бытовая техника
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-3">
+                        <div class="img-box">
+                            <img src="https://www.ixbt.com/car/dvr/videosvidetel-3405-fhd-g-awi/overview.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт навигатора
+                                видеорегистратора
+                                ИБП
+                            </h6>
+                            <p>
+                                Отремонтируем
+                                видеорегистраторы
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-4">
+                        <div class="img-box">
+                            <img src="https://assets.prophotos.ru/data/articles/0002/0610/164775/original.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт принтера
+                                обслуживание оргтехники
+                            </h6>
+                            <p>
+                                Обслуживаем принтеры, сканеры, многофункциональные
+                                устройства
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end service section -->
+
+<!-- info section -->
+<section class="info_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="info-logo">
+                    <!-- <h2>
+                        Сервис центр
+                      </h2>
+                      <p>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout. The point of
+                      </p> -->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-nav">
+                    <h4>
+                        Навигатор
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home'%}">
+                                Главаная страница
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about'%}">
+                                Об компании
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'service'%}">
+                                Услуги
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login'%}">
+                                Cвяжитесь с нами
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login'%}">
+                                Логин
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-contact">
+                    <h4>
+                        Контактные данные
+                    </h4>
+                    <div class="location">
+                        <h6>
+                            Адрес корпоративного офиса:
+                        </h6>
+                        <a href="">
+                            <img src="{% static 'images/location.png' %}" alt="">
+                            <span>
+                  г. Минск улица Якуба Коласа 28
+                </span>
+                        </a>
+                    </div>
+                    <div class="call">
+                        <h6>
+                            Обслуживание клиентов:
+                        </h6>
+                        <a href="{% url 'login'%}">
+                            <img src="images/telephone.png" alt="">
+                            <span>
+                  +(375)25 716-02-18
+                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<!-- end info_section -->
+
+<!-- footer section -->
+<!--  <section class="container-fluid footer_section">-->
+<!--    <p>-->
+<!--      Copyright &copy; 2022 All Rights Reserved-->
+<!--      &lt;!&ndash; <a href="https://html.design/">Free Html Templates</a> &ndash;&gt;-->
+<!--    </p>-->
+<!--  </section>-->
+<!-- footer section -->
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>

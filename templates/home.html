@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+{#    <link href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->#}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Site Metas -->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Service-center</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+{#          href="{% static 'fonts/Poppins-Bold.ttf' %}"/>#}
+          href="{% static 'fonts/Poppins/Poppins-Bold.ttf' %}"/>
+    <!--https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap-->
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap1.css' %}"/>
+{#    <!--    <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap'%}"-->#}
+    <!--          rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+</head>
+
+<body class="container">
+<ul class="list-group">
+    <li class="list-group-item">
+        User: {{ user }} Role: {{ user.get_role_display }}
+    </li>
+    <li class="list-group-item">
+        <a href="{% url 'home' %}">Home</a> | <a href="{% url 'repairs:list' %}">Заявки</a>
+    </li>
+</ul>
+
+<h1>Home page</h1>
+<hr>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'login' %}">Login</a> |
+    <a href="{% url 'register' %}">Register</a>
+{% endif %}
+
+
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="{% url 'home' %}">
+            <span>
+              Service Center
+            </span>
+                </a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}">Главаная страница<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">О компании</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'service' %}"> Услуги </a>
+                            </li>
+                            <!--                            <li class="nav-item">-->
+                            <!--                                <a class="nav-link" href="{% static 'contact.html'%}">Свяжитесь с нами</a>-->
+                            <!--                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'repairs:list' %}">Логин</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">-->
+                <!--                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>-->
+                <!--                </form>-->
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="slider_item-box layout_padding2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src='{% static "images/slider-img.jpg" %}' alt="" class=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h1>
+                                                Сервис центр <br>
+                                                по ремонту <br>
+                                                <span>Техники</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="slider_item-box layout_padding2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src='{% static "images/appliances.jpg" %}' alt="" class=""
+                                                 width="350px"
+                                                 height="400px"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h1>
+                          <span>
+                            Ремонтируем <br>
+                          </span>
+                                            </h1>
+                                            <h2> Все виды техники от офисной до крупной бытовой</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="slider_item-box layout_padding2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <div>
+                                            <img src='{% static "images/handshake.webp" %}' alt="" class=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h1>
+
+                          <span>
+                            Наши клиенты -
+                          </span>
+                                                <h2>Крупнейшие предприятия Беларуси и частные лица</h2>
+                                            </h1>
+                                            <p>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="slider_nav-box">
+                <!--                <div class="btn-box">-->
+                <!--                    <a href="{% static 'service.html'%}">-->
+                <!--                        Узнать больше-->
+                <!--                    </a>-->
+                <!--                    <hr>-->
+                <!--                </div>-->
+                <div class="custom_carousel-control">
+                    <a class="carousel-control-prev" href='#carouselExampleControls' role="button"
+                       data-slide="prev">
+                        <span class="sr-only">Предпоследняя</span>
+                    </a>
+                    <a class="carousel-control-next" href='#carouselExampleControls' role="button"
+                       data-slide="next">
+                        <span class="sr-only">Дальше</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end slider section -->
+</div>
+<div class="bg">
+
+    <!-- about section -->
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="custom_heading-container">
+                <h3 class=" ">
+                    О НАШЕЙ КОМПАНИИ
+                </h3>
+            </div>
+            <p class="layout_padding2-top">
+                Оказываем услуги по ремонту бытовой и офисной техники.
+                Ремонтируем телевизоры, мониторы.
+                Поможем Вам с ремонтом компьютера.
+                Занимаемся ремонтом автомагнитол,
+                Ремонтируем навигаторы.
+                Ремонт кофемашин
+            </p>
+            <div class="img-box layout_padding2">
+                <img src='{% static "images/repair-1.jpg"%}' alt="repair" width="300px" height="299px">
+            </div>
+            <p class="layout_padding2-bottom">
+                Мы осуществляем срочный ремонт всех видов техники. Сделаем все возможное, чтобы вернуть Ваш девайс в
+                строй в
+                самые
+                короткие сроки.
+                Оставьте заявку – и мы подберем индивидуальные условия для Вашего случая
+            </p>
+        </div>
+        <div class="container">
+            <div class="btn-box">
+                <a href="{% url 'repairs:list' %}" class="btn btn-success">
+                    Оставить заявление
+                </a>
+                <hr>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- end about section -->
+
+<!-- service section -->
+
+<section class="service_section layout_padding-bottom">
+    <div class="container">
+        <div class="custom_heading-container">
+            <h3 class=" ">
+                Успешно работаем с запросами:
+            </h3><br><br>
+        </div>
+        <p class="simple">
+        <ul class="left">
+            <li>Телевизор не включается</li>
+            <li>Нет изображения на экране</li>
+            <li>Нет приема ТВ вещания</li>
+            <li>Нет звука или искаженный звук</li>
+            <li>Не работают кнопки или пульт ДУ</li>
+        </ul>
+
+        <ul class="center">
+            <li>Неисправен внутренний блок питания</li>
+            <li>Неисправен преобразователь (инвертор)</li>
+            <li>Неисправна основная плата ТВ</li>
+            <li>Неисправна подсветка ЖК панели ТВ</li>
+            <li>Неисправна плата обработки изображения</li>
+        </ul>
+        <ul class="right">
+            <li>Неисправно программное обеспечение</li>
+            <li>Не работает чтение с внешних носителей</li>
+            <li>Не работает модуль wi-fi, bluetooth</li>
+            <li>Разбит экран ЖК дисплея ТВ</li>
+            <li>ТВ подлежит утилизации</li>
+        </ul>
+        <div class="service_container ">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box b-1">
+                        <div class="img-box">
+                            <img
+                                    src='{% static "images/depositphotos_43255187-stock-illustration-vector-laptop-tablet-monitor-and.jpg" %}'
+                                    width="230" height="200" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт
+                                телевизора
+                                монитора
+                            </h6>
+                            <p>
+                                Вернем работоспособность вашего системного блока
+                                ноутбука
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-2">
+                        <div class="img-box">
+                            <img
+                                    src='{% static "images/istockphoto-993760082-170667a.jpg" %}'
+                                    width="230" height="200" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт
+                                бытовой техники
+                                и техники для дома
+                            </h6>
+                            <p>
+                                Кухонная бытовая техника
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-3">
+                        <div class="img-box">
+                            <img src='{% static "images/overview.jpg" %}' alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт навигатора
+                                видеорегистратора
+                                ИБП
+                            </h6>
+                            <p>
+                                Отремонтируем
+                                видеорегистраторы
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box b-4">
+                        <div class="img-box">
+                            <img src='{% static "images/original.jpg" %}' alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Ремонт принтера
+                                обслуживание оргтехники
+                            </h6>
+                            <p>
+                                Обслуживаем принтеры, сканеры, многофункциональные
+                                устройства
+                            </p>
+                            <div class="btn-box">
+                                <a href="">
+                                    <!-- Read More -->
+                                </a>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end service section -->
+
+<!-- work section -->
+
+<section class="work_section layout_padding">
+    <div class="container">
+        <div class="custom_heading-container">
+            <!-- <h3 class=" ">
+              HOW IT WORKS
+            </h3> -->
+        </div>
+    </div>
+    <div class="work_container ">
+        <div class="box b-1">
+            <div class="img-box">
+                <img src='{% static "images/varranty.png" %}' alt="">
+            </div>
+            <div class="name">
+                <h6>
+                    Гарантия
+                    от 6 до 24 месяцев (в зависимости от работ)
+                </h6>
+            </div>
+        </div>
+        <div class="box b-2">
+            <div class="img-box ">
+                <img src='{% static "images/cost.png" %}' alt="">
+            </div>
+            <div class="name">
+                <h6>
+                    Честная стоимость
+                    окончательная цена согласовывается после диагностики
+                </h6>
+            </div>
+        </div>
+        <div class="box b-3">
+            <div class="img-box ">
+                <img src='{% static "images/payment.png" %}' alt="">
+            </div>
+            <div class="name">
+                <h6>
+                    Любая форма оплаты
+                    наличный и безналичный раасчет, карта, интернет-платеж
+                </h6>
+            </div>
+        </div>
+        <div class="box b-4">
+            <div class="img-box ">
+                <img src='{% static "images/delivery.png" %}' alt="">
+            </div>
+            <div class="name">
+                <h6>
+                    Доставка по Минску
+                    привезем и заберем в удобное время
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="btn-box">
+            <!-- <a href="">
+              Read More
+            </a> -->
+            <hr>
+        </div>
+    </div>
+</section>
+<section class="client_section layout_padding-bottom">
+    <div class="container">
+        <div class="custom_heading-container">
+            <h3 class=" ">
+                Отзывы клиентов
+            </h3>
+        </div>
+        <div class="layout_padding2-top">
+            <div class="client_container">
+                <div class="detail-box">
+                    <p>
+                        Стиральная машина Siemens наверное лет восемь назад покупали , вот появились первые недостатки .
+                        в
+                        частности барабан
+                        стал останавливаться . Когда подал заявку еще мастер позвонил , подробно расспросил о поломке и
+                        не
+                        напрасно . Приехав и
+                        проверив , заменил ремень и насос фильтры почистил . Сказал что в остальном машинка еще в
+                        хорошем
+                        состоянии . Сейчас
+                        работает , супруга не жалуется ., спс.
+                    </p>
+                </div>
+                <div class="client_id">
+                    <div class="img-box">
+                        <img src='{% static "images/client.png" %}' alt="">
+                    </div>
+                    <div class="name">
+                        <h5>
+                            Стас Воинов
+                        </h5>
+                        <!-- <h6>
+                          Owner
+                        </h6> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- info section -->
+<section class="info_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="info-logo">
+                    <!-- <h2>
+                      Сервис центр
+                    </h2>
+                    <p>
+                      It is a long established fact that a reader will be distracted by the readable content of a page when
+                      looking at its layout. The point of
+                    </p> -->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-nav">
+                    <h4>
+                        Навигатор
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home' %}">
+                                Главаная страница
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">
+                                Об компании
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'service' %}">
+                                Услуги
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% static 'contact.html' %}">
+                                Cвяжитесь с нами
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login' %}">
+                                Логин
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-contact">
+                    <h4>
+                        Контактные данные
+                    </h4>
+                    <div class="location">
+                        <h6>
+                            Адрес корпоративного офиса:
+                        </h6>
+                        <a href="">
+                            <img src='{% static "images/location.png" %}' alt="">
+                            <span>
+                    г. Минск улица Якуба Коласа 28
+                  </span>
+                        </a>
+                    </div>
+                    <div class="call">
+                        <h6>
+                            Обслуживание клиентов:
+                        </h6>
+                        <a href="">
+                            <img src='{% static "images/telephone.png" %}' alt="">
+                            <span>
+                    +(375)25 716-02-18
+                  </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end info_section -->
+
+<!-- footer section -->
+<section class="container-fluid footer_section">
+    <!--      <p>-->
+    <!--        Copyright &copy; 2022 All Rights Reserved-->
+    <!-- <a href="https://html.design/">Free Html Templates</a> -->
+    <!--      </p>-->
+</section>
+<!-- footer section -->
+
+<script type="text/javascript" src='{% static "js/jquery-3.4.1.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/bootstrap.js" %}'></script>
+
+</body>
+</html>
+

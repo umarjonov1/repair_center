@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% load static %}
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>About</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css'%}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
+  <link rel="stylesheet" href="contact.html">
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{% url 'home'%}">
+            <span>
+              Service Center
+            </span>
+          </a>
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'home'%}">Главная страница <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'about'%}"> О компании </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'service'%}"> Услуги </a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                  <a class="nav-link" href="contact.html">Свяжитесь с нами</a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'repairs:list' %}">Логин</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+          </form>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h3 class=" ">
+          О НАШЕЙ КОМПАНИИ
+        </h3>
+      </div>
+      <p class="layout_padding2-top">
+        Оказываем услуги по ремонту бытовой и офисной техники.
+        Ремонтируем телевизоры, мониторы.
+        Поможем Вам с ремонтом компьютера.
+        Занимаемся ремонтом автомагнитол,
+        Ремонтируем навигаторы.
+        Ремонт кофемашин
+      </p>
+      <div class="img-box layout_padding2">
+        <img src='{% static "images/repair-1.jpg"%}' alt="repair" width="300px" height="299px">
+      </div>
+      <p class="layout_padding2-bottom">
+        Мы осуществляем срочный ремонт всех видов техники. Сделаем все возможное, чтобы вернуть Ваш девайс в строй в
+        самые
+        короткие сроки.
+        Оставьте заявку – и мы подберем индивидуальные условия для Вашего случая
+      </p>
+    </div>
+    <div class="container">
+      <div class="btn-box">
+        <a href="{% url 'repairs:list' %}" class="btn btn-success">
+                    Оставить заявление
+                </a>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <div class="container">
+    <div class="custom_heading-container">
+      <h3 class=" ">
+        О нашей компании
+      </h3>
+    </div>
+    <br><br><br>
+    <div class="background">
+      <h1>
+        С 2005 года занимаемся ремонтом техники и оборудования на гарантии
+      </h1>
+      <!-- </div>
+    <p class="layout_padding2-top">
+
+    </p>
+      <div class="images-box layout_padding2">
+      <images src="images/about-images.jpg" alt="">
+    </div>
+    <p class="layout_padding2-bottom">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+    </p>
+  </div> -->
+      <div class="leftside">
+        <h2> <img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Наш сервис представляет с собой- </h2>
+        <h3><img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Ремонт техники с истекшим сроком гарантийного
+          обслуживания</h3>
+        <h3><img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Наличие сертификата международного образца
+          СТБ ISO 9001-2015</h3>
+        <h3><img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Авторизация мировых брендов</h3>
+        <h3><img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Региональные партнеры и филиалы в городах
+          Беларусь</h3>
+        <h3><img src='{% static "images/true.png"%}' alt="" width="35px" height="35px">Наши клиенты предпритятия и частные лица</h3>
+        <br><br><br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="btn-box">
+        <!-- <a href="">
+            Read More
+          </a> -->
+        <hr>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- end about section -->
+
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-md-3">
+          <div class="info-logo">
+            <h2>
+              Heustonn
+            </h2>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when
+              looking at its layout. The point of
+            </p>
+          </div>
+        </div> -->
+        <div class="col-md-3">
+          <div class="info-nav">
+            <h4>
+              Навигатор
+            </h4>
+            <ul>
+              <li>
+                <a href="{% url 'home'%}">
+                  Главаная страница
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'about'%}">
+                  Об компании
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'service'%}">
+                  Услуги
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'login'%}">
+                  Cвяжитесь с нами
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'login'%}">
+                  Логин
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-contact">
+            <h4>
+              Контактные данные
+            </h4>
+            <div class="location">
+              <h6>
+                Адрес корпоративного офиса:
+              </h6>
+              <a href="">
+                <img src='{% static "images/location.png"%}' alt="">
+                <span>
+                  г. Минск улица Якуба Коласа 28
+                </span>
+              </a>
+            </div>
+            <div class="call">
+              <h6>
+                Обслуживание клиентов:
+              </h6>
+              <a href="">
+                <img src="{% static 'images/telephone.png'%}" alt="">
+                <span>
+                  +(375)25 716-02-18
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+  </section>
+
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+<!--  <section class="container-fluid footer_section">-->
+<!--    <p>-->
+<!--      Copyright &copy; 2022 All Rights Reserved-->
+      <!-- <a href="https://html.design/">Free Html Templates</a> -->
+<!--    </p>-->
+<!--  </section>-->
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js'%}"></script>
+</body>
+
+</html>
